@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>V-library</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+    <link href="{% static 'users/css/bootstrap.min.css' %}" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/720d275f39.js" crossorigin="anonymous"></script>
+    <link href="{% static 'users/css/style.css'%}" rel="stylesheet">
+</head>
+<body>
+
+    <div class="tm-container">
+
+        <div>
+            <div class="tm-row pt-4">
+
+                <div class="tm-col-left">
+
+                    <div class="tm-site-header media">
+
+                        <i class="fas fa-book fa-3x mt-1 tm-logo"></i>
+
+
+                    </div>
+
+                </div>
+
+                <div class="tm-col-right">
+
+                    <nav class="navbar navbar-expand-lg" id="tm-main-nav">
+
+                        <button class="navbar-toggler toggler-example mr-0 ml-auto" type="button"
+                            data-toggle="collapse" data-target="#navbar-nav"
+                            aria-controls="navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span><i class="fas fa-bars"></i></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse tm-nav" id="navbar-nav">
+
+                            <ul class="navbar-nav text-uppercase">
+
+                                <li class="nav-item">
+                                    <a class="nav-link tm-nav-link" href="index.html">Home</a>
+                                </li>
+
+                                <li class="nav-item active">
+                                    <a class="nav-link tm-nav-link" href="index.html">Register <span class="sr-only">(current)</span></a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link tm-nav-link" href="Syllabus.html">What We Provide</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link tm-nav-link" href="Previous Year Papers.html">Books</a>
+                                </li>
+
+
+                                <!--<li class="nav-item">
+                                    <a class="nav-link tm-nav-link" href="Notes.html">Notes</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link tm-nav-link" href="News.html">News</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link tm-nav-link" href="contact.html">Contact</a>
+                                </li> -->
+
+                            </ul>
+
+                        </div>
+
+                    </nav>
+
+                </div>
+            </div>
+
+            <div class="tm-row">
+
+                <div class="tm-col-left"></div>
+
+                <main class="tm-col-right">
+                    <section class="tm-content">
+                        <h1 class="mb-5 tm-content-title">Welcome to V-Library</h1>
+                        <p class="tm-slogon" style="text-align:center;">Get It DONE!</p>
+
+                        <hr class="mb-5">
+                        <p class="mb-5"></p>
+                        <div class="form">
+
+      <ul class="tab-group">
+        <li class="tab active" id="click"><a href="#signup" style="color:white;">Sign Up</a></li>
+        <li class="tab" id="click2"><a href="#login" style="color:white;">Log In</a></li>
+      </ul>
+      <br>
+      <div class="tab-content">
+        <div id="signup">
+          <br><br><h2 style="text-align: center">Sign Up for Free</h2>
+
+          <form action="register" method="post" Onsubmit= "return checkPassword(this)" >
+          {% csrf_token %}
+          <div class="top-row">
+            <div class="field-wrap">
+              <label>
+                First Name<span class="req">*</span>
+              </label>
+              <input name="first_name" type="text" required autocomplete="off" />
+            </div>
+
+            <div class="field-wrap">
+              <label>
+                Last Name<span class="req">*</span>
+              </label>
+              <input name="last_name" type="text"required autocomplete="off"/>
+            </div>
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Username<span class="req">*</span>
+            </label>
+            <input name="username" type="text"required autocomplete="off"/>
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input name="email" type="email"required autocomplete="off"/>
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Set A Password<span class="req">*</span>
+            </label>
+            <input type="password" name="password1"  required autocomplete="off"/>
+          </div>
+          <div class="field-wrap">
+            <label>
+              Confirm Password<span class="req">*</span>
+            </label>
+            <input type="password" name="password2" required autocomplete="off"/>
+          </div>
+
+          <button type="submit" class="button button-block"/>Get Started</button>
+
+          </form>
+
+        </div>
+
+        <div id="login">
+          <h1>Welcome Back!</h1>
+
+          <form action="/" method="post">
+
+            <div class="field-wrap">
+            <label>
+              Username<span class="req">*</span>
+            </label>
+            <input type="email"required autocomplete="off"/>
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Password<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="off"/>
+          </div>
+
+          <p class="forgot"><a href="#" style="color:white;">Forgot Password?</a></p>
+
+          <button class="button button-block"/>Log In</button>
+
+          </form>
+
+        </div>
+
+      </div><!-- tab-content -->
+
+</div> <!-- /form -->
+                    </section>
+                </main>
+
+            </div>
+
+        </div>
+
+        <div class="tm-row">
+
+            <div class="tm-col-left text-center">
+                <ul class="tm-bg-controls-wrapper">
+                    <li class="tm-bg-control active" data-id="0"></li>
+                    <li class="tm-bg-control" data-id="1"></li>
+                    <li class="tm-bg-control" data-id="2"></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="tm-bg">
+            <div class="tm-bg-left"></div>
+            <div class="tm-bg-right"></div>
+        </div>
+
+    </div>
+
+    <script src="{% static 'users/js/jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static 'users/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'users/js/jquery.backstretch.min.js' %}"></script>
+    <script src="{% static 'users/js/script.js' %}"></script>
+
+</body>
+</html>
